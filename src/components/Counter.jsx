@@ -20,6 +20,7 @@ export class Counter extends Component {
     this.setState(prevState => {
       return {
         good: prevState.good + 1,
+        total: prevState.total + 1,
       };
     });
   };
@@ -28,6 +29,7 @@ export class Counter extends Component {
     this.setState(prevState => {
       return {
         neutral: prevState.neutral + 1,
+        total: prevState.total + 1,
       };
     });
   };
@@ -36,6 +38,7 @@ export class Counter extends Component {
     this.setState(prevState => {
       return {
         bad: prevState.bad + 1,
+        total: prevState.total + 1,
       };
     });
   };
