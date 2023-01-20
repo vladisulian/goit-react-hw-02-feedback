@@ -12,6 +12,8 @@ export class Counter extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
+    positivePercents: 0 + '%',
   };
 
   addGoodFeedback = () => {
@@ -58,18 +60,13 @@ export class Counter extends Component {
         <h1>Statistics</h1>
 
         <div className="statistics">
-          <p>
-            Good:
-            <span> {this.state.good}</span>
-          </p>
-          <p>
-            Neutral
-            <span> {this.state.neutral}</span>
-          </p>
-          <p>
-            Bad
-            <span> {this.state.bad}</span>
-          </p>
+          {/* good, neutra, bad feedback's */}
+          <p>Good: {this.state.good}</p>
+          <p>Neutral {this.state.neutral}</p>
+          <p>Bad {this.state.bad}</p>
+          {/* total, positive percents */}
+          <p>Total: {this.state.total}</p>
+          <p>Positive feedback: {this.state.positivePercents}</p>
         </div>
       </div>
     );
