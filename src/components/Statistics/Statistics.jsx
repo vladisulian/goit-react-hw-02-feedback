@@ -1,4 +1,5 @@
 import React from 'react';
+import './statistics.css';
 export const Statistics = ({ good, neutral, bad, total, positivePercents }) => {
   return (
     <div className="statistics">
