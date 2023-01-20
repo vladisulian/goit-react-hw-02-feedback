@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import '../components/styles.css';
+import { Statistics } from './Statistics/Statistics';
 
 export class Counter extends Component {
   static propTypes = {};
@@ -91,17 +92,13 @@ export class Counter extends Component {
           </button>
         </div>
 
-        <h1>Statistics</h1>
-
-        <div className="statistics">
-          {/* good, neutra, bad feedback's */}
-          <p>Good: {this.state.good}</p>
-          <p>Neutral {this.state.neutral}</p>
-          <p>Bad {this.state.bad}</p>
-          {/* total, positive percents */}
-          <p>Total: {this.state.total}</p>
-          <p>Positive feedback: {this.state.positivePercents}</p>
-        </div>
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.state.total}
+          positivePercents={this.state.positivePercents}
+        />
       </div>
     );
   }
