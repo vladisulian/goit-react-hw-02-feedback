@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import '../components/styles.css';
+
 export class Counter extends Component {
   static defaultProps = {
     initialValue: 0,
@@ -13,24 +14,34 @@ export class Counter extends Component {
     bad: 0,
   };
 
-  handleIncrement = () => {};
+  addGoodFeedback = () => {
+    this.setState(prevState => {
+      return {
+        good: prevState.good + 1,
+      };
+    });
+  };
   handleDecrement = () => {};
 
   render() {
     return (
       <div className="container">
         <h1 className="title">Please, give feedback!</h1>
+
         <div className="buttons">
-          <button type="button">Good</button>
+          <button type="button" onClick={this.addGoodFeedback}>
+            Good
+          </button>
           <button type="button">Neutral</button>
           <button type="button">Bad</button>
         </div>
 
-          <h1>Statistics</h1>
+        <h1>Statistics</h1>
+
         <div className="statistics">
           <p>
             Good:
-            <span> 0</span>
+            <span> {this.state.good}</span>
           </p>
           <p>
             Neutral
