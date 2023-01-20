@@ -4,8 +4,11 @@
   align-items: center;
   justify-content: center;
 }
-.buttons,
 .statistics {
+  text-align: center;
+}
+.buttons,
+.statistics__data {
   display: flex;
   gap: 15px;
 }
