@@ -2,9 +2,9 @@ import { Component } from 'react';
 import '../components/styles.css';
 
 export class Counter extends Component {
-  static defaultProps = {
-    initialValue: 0,
-  };
+  // static defaultProps = {
+  //   initialValue: 0,
+  // };
 
   static propTypes = {};
 
@@ -21,7 +21,22 @@ export class Counter extends Component {
       };
     });
   };
-  handleDecrement = () => {};
+
+  addNeutralFeedback = () => {
+    this.setState(prevState => {
+      return {
+        neutral: prevState.neutral + 1,
+      };
+    });
+  };
+
+  addBadFeedback = () => {
+    this.setState(prevState => {
+      return {
+        bad: prevState.bad + 1,
+      };
+    });
+  };
 
   render() {
     return (
@@ -32,8 +47,12 @@ export class Counter extends Component {
           <button type="button" onClick={this.addGoodFeedback}>
             Good
           </button>
-          <button type="button">Neutral</button>
-          <button type="button">Bad</button>
+          <button type="button" onClick={this.addNeutralFeedback}>
+            Neutral
+          </button>
+          <button type="button" onClick={this.addBadFeedback}>
+            Bad
+          </button>
         </div>
 
         <h1>Statistics</h1>
@@ -45,11 +64,11 @@ export class Counter extends Component {
           </p>
           <p>
             Neutral
-            <span> 0</span>
+            <span> {this.state.neutral}</span>
           </p>
           <p>
             Bad
-            <span> 0</span>
+            <span> {this.state.bad}</span>
           </p>
         </div>
       </div>
