@@ -44,6 +44,15 @@ export class Counter extends Component {
     });
   }
 
+  countPositiveFeedbackPercentage() {
+    this.setState(prevState => {
+      return {
+        positivePercents:
+          Math.round((prevState.good * 100) / prevState.total) + '%',
+      };
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -55,6 +64,7 @@ export class Counter extends Component {
             onClick={() => {
               this.addGoodFeedback();
               this.countTotalFeedback();
+              this.countPositiveFeedbackPercentage();
             }}
           >
             Good
@@ -64,6 +74,7 @@ export class Counter extends Component {
             onClick={() => {
               this.addNeutralFeedback();
               this.countTotalFeedback();
+              this.countPositiveFeedbackPercentage();
             }}
           >
             Neutral
@@ -73,6 +84,7 @@ export class Counter extends Component {
             onClick={() => {
               this.addBadFeedback();
               this.countTotalFeedback();
+              this.countPositiveFeedbackPercentage();
             }}
           >
             Bad
