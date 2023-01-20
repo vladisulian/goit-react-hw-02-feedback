@@ -2,10 +2,6 @@ import { Component } from 'react';
 import '../components/styles.css';
 
 export class Counter extends Component {
-  // static defaultProps = {
-  //   initialValue: 0,
-  // };
-
   static propTypes = {};
 
   state = {
@@ -20,7 +16,6 @@ export class Counter extends Component {
     this.setState(prevState => {
       return {
         good: prevState.good + 1,
-        total: prevState.total + 1,
       };
     });
   };
@@ -29,7 +24,6 @@ export class Counter extends Component {
     this.setState(prevState => {
       return {
         neutral: prevState.neutral + 1,
-        total: prevState.total + 1,
       };
     });
   };
@@ -38,10 +32,17 @@ export class Counter extends Component {
     this.setState(prevState => {
       return {
         bad: prevState.bad + 1,
-        total: prevState.total + 1,
       };
     });
   };
+
+  countTotalFeedback() {
+    this.setState(prevState => {
+      return {
+        total: prevState.total + 1,
+      };
+    });
+  }
 
   render() {
     return (
@@ -49,13 +50,31 @@ export class Counter extends Component {
         <h1 className="title">Please, give feedback!</h1>
 
         <div className="buttons">
-          <button type="button" onClick={this.addGoodFeedback}>
+          <button
+            type="button"
+            onClick={() => {
+              this.addGoodFeedback();
+              this.countTotalFeedback();
+            }}
+          >
             Good
           </button>
-          <button type="button" onClick={this.addNeutralFeedback}>
+          <button
+            type="button"
+            onClick={() => {
+              this.addNeutralFeedback();
+              this.countTotalFeedback();
+            }}
+          >
             Neutral
           </button>
-          <button type="button" onClick={this.addBadFeedback}>
+          <button
+            type="button"
+            onClick={() => {
+              this.addBadFeedback();
+              this.countTotalFeedback();
+            }}
+          >
             Bad
           </button>
         </div>
