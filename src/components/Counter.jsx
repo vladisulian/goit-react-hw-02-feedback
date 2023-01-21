@@ -3,6 +3,7 @@ import '../components/styles.css';
 import { FeedbackOptions } from './Feedback-options/Feedback-options';
 import { Statistics } from './Statistics/Statistics';
 import PropTypes from 'prop-types';
+import { FeedbackSection } from './Feedback-section/FeedbackSection';
 
 export class Counter extends Component {
   static propTypes = {};
@@ -54,8 +55,7 @@ export class Counter extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1 className="title">Please, give feedback!</h1>
+      <FeedbackSection title={`Please, give feedback!`}>
         <FeedbackOptions
           addGood={this.addGoodFeedback}
           addNeutral={this.addNeutralFeedback}
@@ -70,7 +70,7 @@ export class Counter extends Component {
           total={this.state.total}
           positivePercents={this.state.positivePercents}
         />
-      </div>
+      </FeedbackSection>
     );
   }
 }
