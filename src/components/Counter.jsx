@@ -63,39 +63,6 @@ export class Counter extends Component {
           countTotal={this.countTotalFeedback}
           countPercent={this.countPositiveFeedbackPercentage}
         />
-        {/* <div className="buttons">
-          <button
-            type="button"
-            onClick={() => {
-              this.addGoodFeedback();
-              this.countTotalFeedback();
-              this.countPositiveFeedbackPercentage();
-            }}
-          >
-            Good
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              this.addNeutralFeedback();
-              this.countTotalFeedback();
-              this.countPositiveFeedbackPercentage();
-            }}
-          >
-            Neutral
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              this.addBadFeedback();
-              this.countTotalFeedback();
-              this.countPositiveFeedbackPercentage();
-            }}
-          >
-            Bad
-          </button>
-        </div> */}
-
         <Statistics
           good={this.state.good}
           neutral={this.state.neutral}

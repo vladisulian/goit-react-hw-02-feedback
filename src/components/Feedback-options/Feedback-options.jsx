@@ -1,3 +1,4 @@
+import './feedback-options.css';
 export const FeedbackOptions = ({
   addGood,
   addNeutral,
