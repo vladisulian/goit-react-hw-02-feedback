@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import '../components/styles.css';
+import { FeedbackOptions } from './Feedback-options/Feedback-options';
 import { Statistics } from './Statistics/Statistics';
+import PropTypes from 'prop-types';
 
 export class Counter extends Component {
   static propTypes = {};
@@ -37,29 +39,31 @@ export class Counter extends Component {
     });
   };
 
-  countTotalFeedback() {
-    this.setState(prevState => {
-      return {
-        total: prevState.total + 1,
-      };
-    });
-  }
+  countTotalFeedback = () => {
+    this.setState(prevState => ({ total: prevState.total + 1 }));
+  };
 
-  countPositiveFeedbackPercentage() {
+  countPositiveFeedbackPercentage = () => {
     this.setState(prevState => {
       return {
         positivePercents:
           Math.round((prevState.good * 100) / prevState.total) + '%',
       };
     });
-  }
+  };
 
   render() {
     return (
       <div className="container">
         <h1 className="title">Please, give feedback!</h1>
-
-        <div className="buttons">
+        <FeedbackOptions
+          addGood={this.addGoodFeedback}
+          addNeutral={this.addNeutralFeedback}
+          addBad={this.addBadFeedback}
+          countTotal={this.countTotalFeedback}
+          countPercent={this.countPositiveFeedbackPercentage}
+        />
+        {/* <div className="buttons">
           <button
             type="button"
             onClick={() => {
@@ -90,7 +94,7 @@ export class Counter extends Component {
           >
             Bad
           </button>
-        </div>
+        </div> */}
 
         <Statistics
           good={this.state.good}
