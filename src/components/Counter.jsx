@@ -4,6 +4,7 @@ import { FeedbackOptions } from './Feedback-options/Feedback-options';
 import { Statistics } from './Statistics/Statistics';
 import PropTypes from 'prop-types';
 import { FeedbackSection } from './Feedback-section/FeedbackSection';
+import { Notification } from './Notification/Notification';
 
 export class Counter extends Component {
   static propTypes = {};
