@@ -12,7 +12,6 @@ export class App extends Component {
 
   addFeedback = data => {
     const option = data.target.textContent.toLowerCase();
-    console.log(this.state.good);
 
     this.setState(prevState => ({
       [option]: prevState[option] + 1,
@@ -31,18 +30,15 @@ export class App extends Component {
   };
 
   render() {
+    const state = this.state;
     const totalFeedback = this.countTotalFeedback();
     const positiveFeedbacks = this.countPositiveFeedbackPercentage();
 
     return (
       <FeedbackSection title={`Please, give feedback!`}>
-        <FeedbackOptions
-          addFeedback={this.addFeedback}
-          countTotal={this.countTotalFeedback()}
-          countPercent={positiveFeedbacks}
-        />
+        <FeedbackOptions addFeedback={this.addFeedback} />
         <Statistics
-          states={this.state}
+          states={state}
           total={totalFeedback}
           positivePercents={positiveFeedbacks}
         />

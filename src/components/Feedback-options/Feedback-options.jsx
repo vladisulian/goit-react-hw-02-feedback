@@ -1,7 +1,7 @@
 import './feedback-options.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ addFeedback, countTotal, countPercent }) => (
+export const FeedbackOptions = ({ addFeedback }) => (
   <div className="buttons-container">
     {/* first */}
     <button type="button" id="foot" onClick={addFeedback}>
