@@ -1,7 +1,7 @@
 import './feedback-options.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ addFeedback }) => (
+export const FeedbackOptions = ({ addFeedback, countTotal, countPercent }) => (
   <div className="buttons-container">
     {/* first */}
     <button type="button" id="foot" onClick={addFeedback}>
@@ -11,41 +11,23 @@ export const FeedbackOptions = ({ addFeedback }) => (
     </button>
 
     {/* second */}
-    {/* <button
-      type="button"
-      id="foot"
-      onClick={() => {
-        addNeutral();
-        countTotal();
-        countPercent();
-      }}
-    >
+    <button type="button" id="foot" onClick={addFeedback}>
       <div className="button-os">
         <a href="#">Neutral</a>
       </div>
-    </button> */}
+    </button>
 
     {/* last */}
-    {/* <button
-      type="button"
-      id="foot"
-      onClick={() => {
-        addBad();
-        countTotal();
-        countPercent();
-      }}
-    >
+    <button type="button" id="foot" onClick={addFeedback}>
       <div className="button-os">
         <a href="#">Bad</a>
       </div>
-    </button> */}
+    </button>
   </div>
 );
 
 FeedbackOptions.propTypes = {
-  addGood: PropTypes.func,
-  addNeutral: PropTypes.func,
-  addBad: PropTypes.func,
-  countTotal: PropTypes.func,
-  countPercent: PropTypes.func,
+  addFeedback: PropTypes.func,
+  countTotal: PropTypes.number,
+  countPercent: PropTypes.string,
 };

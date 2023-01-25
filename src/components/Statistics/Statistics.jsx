@@ -2,7 +2,8 @@ import { Notification } from 'components/Notification/Notification';
 import PropTypes from 'prop-types';
 import React from 'react';
 import './statistics.css';
-export const Statistics = ({ good, neutral, bad, total, positivePercents }) => {
+export const Statistics = ({ states, total, positivePercents }) => {
+  const { good, neutral, bad } = states;
   return (
     <div className="statistics">
       <h1 className="statistics__title">Statistics</h1>
