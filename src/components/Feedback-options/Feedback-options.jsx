@@ -8,36 +8,52 @@ export const FeedbackOptions = ({
   countTotal,
   countPercent,
 }) => (
-  <div className="buttons">
+  <div className="buttons-container">
+    {/* first */}
     <button
       type="button"
+      id="foot"
       onClick={() => {
         addGood();
         countTotal();
         countPercent();
       }}
     >
-      Good
+      <button type="button">
+        <button class="button-os">
+          <a href="#">Good</a>
+        </button>
+      </button>
     </button>
+
+    {/* second */}
     <button
       type="button"
+      id="foot"
       onClick={() => {
         addNeutral();
         countTotal();
         countPercent();
       }}
     >
-      Neutral
+      <button class="button-os">
+        <a href="#">Neutral</a>
+      </button>
     </button>
+
+    {/* last */}
     <button
       type="button"
+      id="foot"
       onClick={() => {
         addBad();
         countTotal();
         countPercent();
       }}
     >
-      Bad
+      <button class="button-os">
+        <a href="#">Bad</a>
+      </button>
     </button>
   </div>
 );
