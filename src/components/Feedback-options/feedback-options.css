@@ -53,6 +53,7 @@ button {
 }
 
 .button-os a {
+  text-transform: capitalize;
   font-size: 20px;
   display: block;
   text-decoration: none;

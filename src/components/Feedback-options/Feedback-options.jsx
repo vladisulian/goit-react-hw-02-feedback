@@ -1,28 +1,17 @@
 import './feedback-options.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ addFeedback }) => (
+export const FeedbackOptions = ({ addFeedback, state }) => (
   <div className="buttons-container">
-    {/* first */}
-    <button type="button" id="foot" onClick={addFeedback}>
-      <div className="button-os">
-        <a href="#">Good</a>
-      </div>
-    </button>
-
-    {/* second */}
-    <button type="button" id="foot" onClick={addFeedback}>
-      <div className="button-os">
-        <a href="#">Neutral</a>
-      </div>
-    </button>
-
-    {/* last */}
-    <button type="button" id="foot" onClick={addFeedback}>
-      <div className="button-os">
-        <a href="#">Bad</a>
-      </div>
-    </button>
+    {state.map(property => {
+      return (
+        <button type="button" id="foot" onClick={addFeedback} key={property}>
+          <div className="button-os">
+            <a href="#">{property}</a>
+          </div>
+        </button>
+      );
+    })}
   </div>
 );
 

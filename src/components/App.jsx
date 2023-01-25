@@ -36,7 +36,10 @@ export class App extends Component {
 
     return (
       <FeedbackSection title={`Please, give feedback!`}>
-        <FeedbackOptions addFeedback={this.addFeedback} />
+        <FeedbackOptions
+          addFeedback={this.addFeedback}
+          state={Object.keys(this.state)}
+        />
         <Statistics
           states={state}
           total={totalFeedback}
