@@ -1,31 +1,17 @@
 import './feedback-options.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({
-  addGood,
-  addNeutral,
-  addBad,
-  countTotal,
-  countPercent,
-}) => (
+export const FeedbackOptions = ({ addFeedback }) => (
   <div className="buttons-container">
     {/* first */}
-    <button
-      type="button"
-      id="foot"
-      onClick={() => {
-        addGood();
-        countTotal();
-        countPercent();
-      }}
-    >
+    <button type="button" id="foot" onClick={addFeedback}>
       <div className="button-os">
         <a href="#">Good</a>
       </div>
     </button>
 
     {/* second */}
-    <button
+    {/* <button
       type="button"
       id="foot"
       onClick={() => {
@@ -37,10 +23,10 @@ export const FeedbackOptions = ({
       <div className="button-os">
         <a href="#">Neutral</a>
       </div>
-    </button>
+    </button> */}
 
     {/* last */}
-    <button
+    {/* <button
       type="button"
       id="foot"
       onClick={() => {
@@ -52,7 +38,7 @@ export const FeedbackOptions = ({
       <div className="button-os">
         <a href="#">Bad</a>
       </div>
-    </button>
+    </button> */}
   </div>
 );
 
