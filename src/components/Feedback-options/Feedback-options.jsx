@@ -19,11 +19,9 @@ export const FeedbackOptions = ({
         countPercent();
       }}
     >
-      <button type="button">
-        <button class="button-os">
-          <a href="#">Good</a>
-        </button>
-      </button>
+      <div className="button-os">
+        <a href="#">Good</a>
+      </div>
     </button>
 
     {/* second */}
@@ -36,9 +34,9 @@ export const FeedbackOptions = ({
         countPercent();
       }}
     >
-      <button class="button-os">
+      <div className="button-os">
         <a href="#">Neutral</a>
-      </button>
+      </div>
     </button>
 
     {/* last */}
@@ -51,9 +49,9 @@ export const FeedbackOptions = ({
         countPercent();
       }}
     >
-      <button class="button-os">
+      <div className="button-os">
         <a href="#">Bad</a>
-      </button>
+      </div>
     </button>
   </div>
 );

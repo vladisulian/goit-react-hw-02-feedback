@@ -39,6 +39,11 @@ button {
   transition: background-color 2.2s;
   transition-duration: 3s;
   transition: 1.5s;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-os:hover {
