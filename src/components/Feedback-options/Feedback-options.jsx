@@ -1,4 +1,6 @@
 import './feedback-options.css';
+import PropTypes from 'prop-types';
+
 export const FeedbackOptions = ({
   addGood,
   addNeutral,
@@ -39,3 +41,11 @@ export const FeedbackOptions = ({
     </button>
   </div>
 );
+
+FeedbackOptions.propTypes = {
+  addGood: PropTypes.func,
+  addNeutral: PropTypes.func,
+  addBad: PropTypes.func,
+  countTotal: PropTypes.func,
+  countPercent: PropTypes.func,
+};

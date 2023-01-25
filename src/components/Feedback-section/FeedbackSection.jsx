@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const FeedbackSection = ({ title, children }) => {
   return (
     <section className="feedback-section">
@@ -5,4 +6,8 @@ export const FeedbackSection = ({ title, children }) => {
       {children}
     </section>
   );
+};
+
+FeedbackSection.propTypes = {
+  title: PropTypes.string,
 };
