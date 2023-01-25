@@ -5,7 +5,14 @@ export const FeedbackOptions = ({ addFeedback, state }) => (
   <div className="buttons-container">
     {state.map(property => {
       return (
-        <button type="button" id="foot" onClick={addFeedback} key={property}>
+        <button
+          type="button"
+          id="foot"
+          onClick={e => {
+            addFeedback(e.target.textContent.toLowerCase());
+          }}
+          key={property}
+        >
           <div className="button-os">
             <a href="#">{property}</a>
           </div>

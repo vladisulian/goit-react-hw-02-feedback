@@ -11,10 +11,8 @@ export class App extends Component {
   };
 
   addFeedback = data => {
-    const option = data.target.textContent.toLowerCase();
-
     this.setState(prevState => ({
-      [option]: prevState[option] + 1,
+      [data]: prevState[data] + 1,
     }));
   };
 
