@@ -9,7 +9,7 @@ export const FeedbackOptions = ({ addFeedback, state }) => (
           type="button"
           id="foot"
           onClick={e => {
-            addFeedback(e.target.textContent.toLowerCase());
+            addFeedback(property.toLowerCase());
           }}
           key={property}
         >
